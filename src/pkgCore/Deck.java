@@ -44,4 +44,24 @@ public class Deck {
 	{
 		return cardsInDeck.size();
 	}
+	public int getRemaining(Object card) {
+		int numCards = 0;
+		for(int i = 0; i < cardsInDeck.size();i++) {
+			if(card instanceof eRank) {
+				if(cardsInDeck.get(i).geteRank() == card) {
+					numCards++;
+				}
+			}
+			if(card instanceof eSuit) {
+				if(cardsInDeck.get(i).geteSuit() == card) {
+					numCards++;
+				}
+			}
+			else {
+				System.out.print("Invalid input");
+				return 0;
+			}
+		}
+		return numCards;
+	}
 }
